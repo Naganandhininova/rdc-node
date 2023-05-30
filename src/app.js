@@ -20,7 +20,7 @@ import * as errorHandler from './helpers/errorHandler.js'
 import './models/db.js'
 
 // routes
-import indexRouter from './routes/index.js'
+import basicRouter from './routes/v1/basicRoute.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -51,7 +51,7 @@ app.use(
     })
 )
 
-app.use('/v1', indexRouter)
+app.use('/v1', basicRouter)
 
 app.use(errorHandler.notFound)
 

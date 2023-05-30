@@ -2,9 +2,9 @@
 import Joi from 'joi'
 
 // import helpers
-import getValidationErrors from '../helpers/validate.js'
+import getValidationErrors from '../../helpers/validate.js'
 
-class IndexValidation {
+class BasicValidation {
     async addUser(req, res, next) {
         const schema = Joi.object({
             first_name: Joi.string().required().messages({
@@ -39,4 +39,4 @@ class IndexValidation {
     }
 }
 
-export default new IndexValidation()
+export default new BasicValidation()

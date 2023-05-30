@@ -6,14 +6,20 @@ import sequelize from './db.js'
 const sampleUser = sequelize.define(
     'sampleuser',
     {
-        name: {
-            type: DataTypes.STRING(100),
+        first_name: {
+            type: DataTypes.STRING(50),
+        },
+        last_name: {
+            type: DataTypes.STRING(50),
         },
         email: {
             type: DataTypes.STRING(70),
         },
         password: {
             type: DataTypes.STRING(30),
+        },
+        user_role: {
+            type: DataTypes.INTEGER,
         },
         active_status: {
             type: DataTypes.INTEGER,
