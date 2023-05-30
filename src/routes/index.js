@@ -1,6 +1,5 @@
 // import packages
 import express from 'express'
-import sql from 'mssql';
 
 // import validation
 import IndexValidation from '../validations/indexValidation.js'
@@ -8,10 +7,10 @@ import IndexValidation from '../validations/indexValidation.js'
 // import helpers
 import RedisDb from '../helpers/redisDb.js'
 import messages from '../helpers/messages.js'
-const router = express.Router();
 
 // import controllers
 import IndexController from '../controllers/indexController.js'
+const router = express.Router()
 
 // sample route
 router.get('/', async (req, res) => {
