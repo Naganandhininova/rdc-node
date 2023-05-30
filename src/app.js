@@ -1,4 +1,4 @@
-// import packages
+// packages
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -12,14 +12,14 @@ import fs from 'fs'
 import winston from 'winston'
 import expressWinston from 'express-winston'
 
-// import helpers
+// helpers
 import globalData from './helpers/globals.js'
 import * as errorHandler from './helpers/errorHandler.js'
 
-// import model
+// model
 import './models/db.js'
 
-// import routes
+// routes
 import indexRouter from './routes/index.js'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -38,8 +38,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(helmet())
 app.use(cors())
 
-let newDate = new Date();
-let currentDate = newDate.getFullYear() + "-" + (newDate.getMonth() + 1) + "-" + newDate.getDate();
+const newDate = new Date()
+const currentDate = newDate.getFullYear() + '-' + (newDate.getMonth() + 1) + '-' + newDate.getDate()
 app.use(
     expressWinston.logger({
         transports: [new winston.transports.File({ filename: `logs/${currentDate}.log`, json: true })],
@@ -47,7 +47,7 @@ app.use(
         meta: true,
         msg: 'HTTP {{req.method}} {{req.url}}',
         expressFormat: true,
-        colorize: true
+        colorize: true,
     })
 )
 

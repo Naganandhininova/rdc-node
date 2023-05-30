@@ -5,6 +5,7 @@ client.connect()
 class RedisDb {
     async getData(tableName) {
         const getTableData = await client.get(tableName)
+        console.log('getTableData', getTableData)
         if (!getTableData) {
             const tableValue = await this.setData(tableName)
             return tableValue
