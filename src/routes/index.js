@@ -14,6 +14,7 @@ const router = express.Router()
 
 // sample route
 router.get('/', async (req, res) => {
+    console.log('Basic route')
     res.status(200).json({ message: 'success' })
 })
 
