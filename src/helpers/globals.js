@@ -18,6 +18,8 @@ const globalData = {
     sqlPoolMax: process.env.SQL_POOL_MAX,
     // jwt
     jwtSecret: process.env.JWT_SECRET,
+    // bcrypt
+    salt: process.env.SALT,
 }
 
 export default globalData

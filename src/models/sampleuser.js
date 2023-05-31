@@ -16,7 +16,7 @@ const sampleUser = sequelize.define(
             type: DataTypes.STRING(70),
         },
         password: {
-            type: DataTypes.STRING(30),
+            type: DataTypes.STRING(150),
         },
         user_role: {
             type: DataTypes.INTEGER,
