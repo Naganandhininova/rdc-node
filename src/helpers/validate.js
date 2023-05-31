@@ -21,7 +21,7 @@ const getValidationErrors = (schema, type, req, res, next) => {
             res.status(400).json({ status: false, message: messages.catchError })
         }
     } catch (error) {
-        console.log('Error catched in getValidationErrors -> ', error)
+        console.log(`Error catched in getValidationErrors -> ${error}`)
         res.status(500).json({ status: false, message: messages.catchError })
     }
 }

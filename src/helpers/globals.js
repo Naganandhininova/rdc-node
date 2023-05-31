@@ -16,7 +16,8 @@ const globalData = {
     sqlPoolEnable: process.env.SQL_POOL_ENABLE,
     sqlPoolMin: process.env.SQL_POOL_MIN,
     sqlPoolMax: process.env.SQL_POOL_MAX,
-
+    // jwt
+    jwtSecret: process.env.JWT_SECRET,
 }
 
 export default globalData

@@ -15,12 +15,11 @@ router.get('/', async (req, res) => {
 // redis sample
 router.get('/productList', async (req, res) => {
     try {
-        console.log('req  .body', req.body.email, req.body.password)
         let getData = await RedisDb.getData('product')
         getData = JSON.parse(getData)
         res.send(getData)
     } catch (error) {
-        console.log('Error catched in productList -> ', error)
+        console.log(`Error catched in productList -> ${error}`)
         res.status(500).json({ message: messages.catchError })
     }
 })

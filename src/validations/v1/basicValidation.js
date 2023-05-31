@@ -45,6 +45,21 @@ class BasicValidation {
         })
         await getValidationErrors(schema, 'body', req, res, next)
     }
+
+    async login(req, res, next) {
+        const schema = Joi.object({
+            email: Joi.string().email().required().messages({
+                'any.required': 'email is required',
+                'string.empty': 'email should not be empty',
+                'string.email': 'email should be valid',
+            }),
+            password: Joi.string().required().messages({
+                'any.required': 'password is required',
+                'string.empty': 'password should not be empty',
+            }),
+        })
+        await getValidationErrors(schema, 'body', req, res, next)
+    }
 }
 
 export default new BasicValidation()

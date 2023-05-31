@@ -11,5 +11,7 @@ const router = express.Router()
 
 // add user
 router.post('/addUser', BasicValidation.addUser, BasicController.addUser)
+// login user
+router.post('/login', BasicValidation.login, BasicController.login)
 
 export default router
