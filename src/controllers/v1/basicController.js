@@ -8,17 +8,16 @@ class BasicController {
         try {
             const data = req.body
             data.email = data.email.toLowerCase()
-
             const getUserData = await sampleUser.findOne({ where: { email: data.email } })
-            if (getUserData) {
-                res.status(400).json({ message: 'Email already exists' })
-            } else {
+            if (!getUserData) {
                 await sampleUser.create(data)
-                res.status(400).json({ message: 'User added successfully' })
+                res.status(200).json({ status: true, message: messages.addUser })
+            } else {
+                res.status(400).json({ status: false, message: messages.emailExist })
             }
         } catch (error) {
-            console.log('Error catched in addUser', error)
-            res.status(500).json({ message: messages.catchError })
+            console.log('Error catched in addUser -> ', error)
+            res.status(500).json({ status: false, message: messages.catchError })
         }
     }
 }

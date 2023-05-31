@@ -33,4 +33,6 @@ const sampleUser = sequelize.define(
     }
 )
 
+sampleUser.sync()
+
 export default sampleUser
