@@ -52,6 +52,7 @@ class BasicController {
     async getUserList(req, res) {
         try {
             const getData = await sampleUser.findAll({})
+            console.log('getData', getData)
             if (getData && getData.length > 0) {
                 res.status(200).json({ status: true, message: messages.dataFetch, data: getData })
             } else {
