@@ -1,0 +1,20 @@
+PORT = 4300
+PM2_INSTANCES = 1
+
+SSL = "false"
+SSL_KEY = ''
+SSL_CERT = ''
+SSL_CA = ''
+
+SQL_HOST = "localhost"
+SQL_PORT = 1433
+SQL_USER = "sa"
+SQL_PASSWORD = "Nova@0099"
+SQL_DB = "TestDB"
+SQL_POOL_ENABLE = "true"
+SQL_POOL_MIN = 1
+SQL_POOL_MAX = 100
+
+JWT_SECRET = "rdcjwt"
+
+SALT = 10
