@@ -19,4 +19,6 @@ router.post('/login', BasicValidation.login, BasicController.login)
 // get list
 router.get('/getUserList', AuthService.adminAccess, BasicController.getUserList)
 
+router.get('/checkStoredProcedure', BasicController.checkStoredProcedure)
+
 export default router

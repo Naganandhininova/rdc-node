@@ -63,6 +63,16 @@ class BasicController {
             res.status(500).json({ status: false, message: messages.catchError })
         }
     }
+
+    async checkStoredProcedure(req, res) {
+        try {
+            await CommonService.executeStoredProcedure()
+            res.status(200).json({ status: true, message: messages.dataFetch })
+        } catch (error) {
+            console.log(`Error catched in checkStoredProcedure -> ${error}`)
+            res.status(500).json({ status: false, message: messages.catchError })
+        }
+    }
 }
 
 export default new BasicController()
